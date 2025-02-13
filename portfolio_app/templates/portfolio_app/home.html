@@ -1,0 +1,271 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Muthami</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet"> <!-- For Icons -->
+    <style>
+        * {
+            font-family: Open Sans;
+        }
+        body {
+            background-color: #ECF0F1;
+        }
+        .contact-bar {
+            font-size:smaller;
+            background-color: silver;
+            color: #2C3E50;
+            text-align: center;
+            padding: 3px;
+        }
+        .contact-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1040; /* Higher than navbar */
+        }
+        .contact-bar a {
+            color: #2C3E50;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .contact-bar a:hover {
+            text-decoration: underline;
+            color: #686f76 !important;
+        }
+        {% comment %} small devices {% endcomment %}
+
+        @media (max-width: 767px) {
+           
+            .navbar {
+                background-color: #2C3E50;
+                top: -25px; /* Ensure space between navbar and contact bar */
+            }
+            #more_details{
+                display:none;
+            }
+        }
+        .navbar {
+            background-color: #2C3E50;
+            margin-top: 25px; /* Ensure space between navbar and contact bar */
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #686f76 !important;
+        }
+        section {
+            padding: 80px 0;
+        }
+        h2 {
+            color: #2C3E50;
+            border-bottom: 2px solid #34495E;
+        }
+        .card {
+            border-radius: 10px;
+        }
+        .carousel img {
+            height: 60vh;
+            object-fit: cover;
+        }
+        /* Overlay text on carousel */
+        .carousel-caption {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .btn-custom {
+            background-color: #34495E;
+            color: white;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #7F8C8D;
+            color: white;
+        }
+        footer {
+            background-color: #2C3E50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- contact bar at top-->
+    <div class="contact-bar d-none d-md-block">
+        <a href="tel:+254113957610"><i class="fa fa-phone"></i> +254 113 957610</a>
+        <a href="mailto:muthokasam001@gmail.com"><i class="fa fa-envelope"></i> muthokasam001@gmail.com</a>
+        <a href="https://ke.linkedin.com/in/samuel-muthami-ab378b262" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/Samthoh" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+    </div>
+    
+    <!-- Make the navbar fixed at the top -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Samuel Muthami</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>                
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/slide2.jpg' %}" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-caption d-md-block">
+                    <h3>Welcome.</h3>
+                    <p id="more_details">Full-Stack Developer | Passionate about Building Scalable Applications</p>
+                    <p id="read_more"><a class="link" href="#about">Read More! </a></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/slide3.jpg' %}" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption d-md-block">
+                    <h3>My Experience.</h3>
+                    <p id="more_details">Over a year of experience in web applications, REST APIs & DevOps</p>
+                    <p id="read_more"><a class="link" href="#experience">Read More! </a></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/slide1.jpg' %}" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption d-md-block">
+                    <h3>Let's Build!</h3>
+                    <p id="more_details">Reach out for collaboration on innovative projects!</p>
+                    <p id="read_more"><a class="link" href="#contact">Contact me here! </a></p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+    
+    
+    <div class="container">
+        <section id="about">
+            <h2>About</h2>
+            <p><i class="fa fa-user"></i> Full-Stack Software Developer with 1 year of experience in web applications design, development, testing & deployment. Specializing in scalable applications, RESTful APIs, and Test-Driven Development. Proficient in DevOps, with a strong focus on clean and maintainable code. A highly motivated, adaptable, and responsible individual, recently graduated and prepared to work diligently to deliver work of exceptional quality, dedicated to delivering high-quality software.</p>
+        </section>
+
+        <section id="experience" class="mt-5">
+            <h2>Experience</h2>
+            {% for exp in experiences %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fa fa-briefcase"></i> {{ exp.role }} at {{ exp.company }}</h5>
+                        <h6 class="card-subtitle text-muted">{{ exp.start_date }} - {{ exp.end_date|default:"Present" }}</h6>
+                        <p class="card-text">{{ exp.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+        
+        <section id="projects" class="mt-5">
+            <h2>Projects</h2>
+            <div class="row">
+                {% for project in projects %}
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa fa-code"></i> {{ project.title }}</h5>
+                                <p class="card-text">{{ project.description }}</p>
+                                {% if project.link %}
+                                    <a href="{{ project.link }}" class="btn btn-primary" target="_blank"><i class="fa fa-external-link"></i> View Project</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="blog" class="mt-5">
+            <h2>Blog</h2>
+            {% for post in blog_posts %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.content|slice:":200" }}...</p>  <!-- Show first 200 characters of content -->
+                        <a href="{% url 'blog_detail' post.id %}" class="btn btn-custom">Read More</a>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No blog posts available.</p>
+            {% endfor %}
+        </section>
+
+        <section id="contact" class="mt-5">
+            <h2>Contact Me</h2>
+            
+            {% if message_sent %}
+                <div class="alert alert-success" role="alert">
+                    Your message has been sent successfully!
+                </div>
+            {% endif %}
+            
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-custom">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>Contact: <a href="mailto:muthokasam001@gmail.com">muthokasam001@gmail.com</a> | Phone: +254 113 957610</p>
+        <p>&copy; 2025 Samuel Muthami. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
